@@ -1,5 +1,7 @@
+import { Page } from './stories/Page';
+
 function App() {
-  return <div className='App'>This is a CRA Project With Storybook</div>;
+  return <Page />;
 }
 
 export default App;
