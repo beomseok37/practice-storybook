@@ -9,3 +9,4 @@
 ## 📜 목차
 
 1. CRA 프로젝트에 storybook 적용, CI 구성 -> 블로그 글 가기([Storybook CRA에 적용하기](https://beomseok37.tistory.com/98))
+2. 간단, 복잡한 컴포넌트 구현
