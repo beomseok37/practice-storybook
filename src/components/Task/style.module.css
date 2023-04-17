@@ -1,0 +1,20 @@
+.list-item {
+  height: 80px;
+  background: #839acc;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #243e57;
+}
+
+.input {
+  border: none;
+  background: #839acc;
+  color: #243e57;
+}
+
+.button {
+  border: none;
+  background: transparent;
+}
