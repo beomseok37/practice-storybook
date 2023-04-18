@@ -1,0 +1,38 @@
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader-wrapper {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  width: 30px;
+  height: 30px;
+  border: 5px solid #243e57;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+.list-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 480px;
+  overflow-y: auto;
+  flex-direction: column;
+  background: #839acc;
+  color: #243e57;
+  font-size: 42px;
+}
