@@ -1,17 +1,25 @@
 .list-item {
-  height: 80px;
-  background: #839acc;
-  width: 50%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 90%;
+  height: 80px;
+  padding: 0 20px;
   color: #243e57;
 }
-
+.label {
+  display: flex;
+  align-items: center;
+}
 .input {
   border: none;
-  background: #839acc;
   color: #243e57;
+  background: #839acc;
+  font-size: 20px;
+}
+
+.pin-wrapper {
+  display: flex;
 }
 
 .button {

@@ -6,7 +6,7 @@ export default {
   title: 'Task',
 };
 
-const Template: StoryFn<TaskProps> = (args: any) => <Task {...args} />;
+const Template: StoryFn<TaskProps> = (args: TaskProps) => <Task {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

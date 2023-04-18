@@ -13,7 +13,7 @@ interface Props {
 function Task({ task, onArchiveTask, onPinTask }: Props) {
   return (
     <div className={style['list-item']}>
-      <div>
+      <div className={style.label}>
         {task.state === 'TASK_ARCHIVED' ? (
           <MdCheckBox
             onClick={() => onArchiveTask(task.id)}
@@ -36,7 +36,10 @@ function Task({ task, onArchiveTask, onPinTask }: Props) {
         />
       </div>
 
-      <div onClick={(event) => event.stopPropagation()}>
+      <div
+        className={style['pin-wrapper']}
+        onClick={(event) => event.stopPropagation()}
+      >
         {task.state !== 'TASK_ARCHIVED' && (
           <button onClick={() => onPinTask(task.id)} className={style.button}>
             {task.state === 'TASK_PINNED' ? (
