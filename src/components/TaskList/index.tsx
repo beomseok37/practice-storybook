@@ -1,23 +1,31 @@
 import { BsCheckCircle } from 'react-icons/bs';
-import { TaskType } from 'src/types';
-import style from './style.module.css';
+import { useDispatch, useSelector } from 'react-redux';
+
 import Task from 'src/components/Task';
 
-interface Props {
-  tasks: TaskType[];
-  loading: boolean;
-  onPinTask: (id: string) => void;
-  onArchiveTask: (id: string) => void;
-}
+import { selectStatus, selectTasks, updateTaskState } from 'src/redux/tasks';
 
-function TaskList({ tasks, loading, onPinTask, onArchiveTask }: Props) {
+import style from './style.module.css';
+
+function TaskList() {
+  const dispatch = useDispatch();
+  const tasks = useSelector(selectTasks);
+  const status = useSelector(selectStatus);
+
+  const handlePinTask = (newID: string) => {
+    dispatch(updateTaskState({ id: newID, newTaskState: 'TASK_PINNED' }));
+  };
+  const handleArchiveTask = (newID: string) => {
+    dispatch(updateTaskState({ id: newID, newTaskState: 'TASK_ARCHIVED' }));
+  };
+
   const LoadingRow = (
     <div className={style['loader-wrapper']}>
       <span className={style.loader} />
     </div>
   );
 
-  if (loading) {
+  if (status === 'loading') {
     return (
       <div className={style['list-items']}>
         {LoadingRow}
@@ -50,8 +58,8 @@ function TaskList({ tasks, loading, onPinTask, onArchiveTask }: Props) {
         <Task
           key={task.id}
           task={task}
-          onPinTask={onPinTask}
-          onArchiveTask={onArchiveTask}
+          onPinTask={handlePinTask}
+          onArchiveTask={handleArchiveTask}
         />
       ))}
     </div>
@@ -59,4 +67,3 @@ function TaskList({ tasks, loading, onPinTask, onArchiveTask }: Props) {
 }
 
 export default TaskList;
-export type { Props };
