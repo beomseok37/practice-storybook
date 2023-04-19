@@ -1,13 +1,9 @@
 import { StoryFn } from '@storybook/react';
-import { Provider } from 'react-redux';
-
-import store from 'src/redux/store';
 
 import * as TaskStories from 'src/components/Task/index.stories';
 
-import TaskListWrapper from './TaskListWrapper';
+import ProviderWrapper from './ProviderWrapper';
 import TaskList from '..';
-import { StateType } from 'src/redux/tasks';
 
 const mockedState = {
   tasks: [
@@ -39,11 +35,9 @@ const Template: StoryFn = () => <TaskList />;
 export const Default = Template.bind({});
 Default.decorators = [
   (Story: StoryFn) => (
-    <Provider store={store}>
-      <TaskListWrapper initialState={mockedState}>
-        <Story />
-      </TaskListWrapper>
-    </Provider>
+    <ProviderWrapper initialState={mockedState}>
+      <Story />
+    </ProviderWrapper>
   ),
 ];
 
@@ -60,11 +54,9 @@ WithPinnedTasks.decorators = [
       },
     ];
     return (
-      <Provider store={store}>
-        <TaskListWrapper initialState={{ ...mockedState, tasks: pinnedTasks }}>
-          <Story />
-        </TaskListWrapper>
-      </Provider>
+      <ProviderWrapper initialState={{ ...mockedState, tasks: pinnedTasks }}>
+        <Story />
+      </ProviderWrapper>
     );
   },
 ];
@@ -72,21 +64,17 @@ WithPinnedTasks.decorators = [
 export const Loading = Template.bind({});
 Loading.decorators = [
   (Story: StoryFn) => (
-    <Provider store={store}>
-      <TaskListWrapper initialState={{ ...mockedState, status: 'loading' }}>
-        <Story />
-      </TaskListWrapper>
-    </Provider>
+    <ProviderWrapper initialState={{ ...mockedState, status: 'loading' }}>
+      <Story />
+    </ProviderWrapper>
   ),
 ];
 
 export const Empty = Template.bind({});
 Empty.decorators = [
   (Story: StoryFn) => (
-    <Provider store={store}>
-      <TaskListWrapper initialState={{ ...mockedState, tasks: [] }}>
-        <Story />
-      </TaskListWrapper>
-    </Provider>
+    <ProviderWrapper initialState={{ ...mockedState, tasks: [] }}>
+      <Story />
+    </ProviderWrapper>
   ),
 ];
