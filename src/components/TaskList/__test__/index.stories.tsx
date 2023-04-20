@@ -5,7 +5,7 @@ import * as TaskStories from 'src/components/Task/index.stories';
 import ProviderWrapper from './ProviderWrapper';
 import TaskList from '..';
 
-const mockedState = {
+export const mockedState = {
   tasks: [
     { ...TaskStories.Default.args!.task!, id: '1', title: 'Task 1' },
     { ...TaskStories.Default.args!.task!, id: '2', title: 'Task 2' },
@@ -15,7 +15,7 @@ const mockedState = {
     { ...TaskStories.Default.args!.task!, id: '6', title: 'Task 6' },
   ],
   status: 'idle',
-  error: null,
+  error: '',
 };
 
 export default {
@@ -28,6 +28,7 @@ export default {
       </div>
     ),
   ],
+  excludeStories: /.*mockedState$/,
 };
 
 const Template: StoryFn = () => <TaskList />;

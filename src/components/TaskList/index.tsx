@@ -27,13 +27,7 @@ function TaskList() {
 
   if (status === 'loading') {
     return (
-      <div className={style['list-items']}>
-        {LoadingRow}
-        {LoadingRow}
-        {LoadingRow}
-        {LoadingRow}
-        {LoadingRow}
-        {LoadingRow}
+      <div className={style['list-items']} data-testid='loading'>
         {LoadingRow}
       </div>
     );
