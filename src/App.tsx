@@ -1,7 +1,15 @@
-import { Page } from './stories/Page';
+import { Provider } from 'react-redux';
+
+import InBoxScreen from 'src/components/InBoxScreen';
+
+import store from 'src/redux/store';
 
 function App() {
-  return <Page />;
+  return (
+    <Provider store={store}>
+      <InBoxScreen />
+    </Provider>
+  );
 }
 
 export default App;
