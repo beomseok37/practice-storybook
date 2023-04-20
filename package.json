@@ -68,6 +68,8 @@
     "@storybook/testing-react": "^2.0.0",
     "babel-plugin-named-exports-order": "^0.0.2",
     "chromatic": "^6.17.3",
+    "msw": "^1.2.1",
+    "msw-storybook-addon": "^1.8.0",
     "prop-types": "^15.8.1",
     "react-test-renderer": "^18.2.0",
     "storybook": "^7.0.5",
@@ -75,5 +77,8 @@
   },
   "readme": "README.md",
   "_id": "storybook-tutorial@0.1.0",
-  "description": "README.md"
+  "description": "README.md",
+  "msw": {
+    "workerDirectory": "public"
+  }
 }
