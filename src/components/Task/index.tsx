@@ -33,6 +33,7 @@ function Task({ task, onArchiveTask, onPinTask }: Props) {
           value={task.title}
           readOnly={true}
           placeholder='Input title'
+          style={{ background: 'red' }}
         />
       </div>
 
