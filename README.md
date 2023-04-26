@@ -13,3 +13,4 @@
 3. 데이터 연결(전영 상태 관리 도구) -> 블로그 글 가기 ([Storybook 데이터 연결하기](https://beomseok37.tistory.com/101))
 4. 실제 화면 구성 -> 블로그 글 가기 ([Storybook 화면 구성](https://beomseok37.tistory.com/102))
 5. 테스트 -> ([Storybook 스냅샷 테스트](https://beomseok37.tistory.com/103))
+6. addons -> ([Storybook Addons](https://beomseok37.tistory.com/104))
