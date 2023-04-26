@@ -5,6 +5,7 @@
   width: 90%;
   height: 80px;
   padding: 0 20px;
+  background: #839acc;
   color: #243e57;
 }
 .label {
@@ -16,6 +17,7 @@
   color: #243e57;
   background: #839acc;
   font-size: 20px;
+  text-overflow: ellipsis;
 }
 
 .pin-wrapper {
